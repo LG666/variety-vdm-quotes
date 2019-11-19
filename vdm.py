@@ -71,11 +71,12 @@ class GoodreadsSource(IQuoteSource):
 
         for getfeed in news_list:
             
-            self.quotes.append({
-                "quote": getfeed.description.text.strip(), 
-                "author": getfeed.title.text.strip(),
-                "sourceName": "VDM", 
-                "link": getfeed.link.text.strip()})
+            if getfeed.enclosure is None:
+                self.quotes.append({
+                    "quote": getfeed.description.text.strip(), 
+                    "author": getfeed.title.text.strip(),
+                    "sourceName": "VDM", 
+                    "link": getfeed.link.text.strip()})
             
         if not self.quotes:
             logger.warning("Could not find quotes for URL " + BASE_URL)
