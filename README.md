@@ -17,4 +17,4 @@ Needs
 
 Variety is developed by Peter Levi  - https://peterlevi.com/variety/
 
-vmd.py is inspired by variety-goodreads-quotes  - https://github.com/dsbmac/variety-goodreads-quotes
+vdm.py is inspired by variety-goodreads-quotes  - https://github.com/dsbmac/variety-goodreads-quotes
