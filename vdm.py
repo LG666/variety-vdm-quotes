@@ -72,6 +72,9 @@ class GoodreadsSource(IQuoteSource):
         for getfeed in news_list:
             
             if getfeed.enclosure is None:
+                author = getfeed.title.text.strip()
+                if author == "Par":
+                    author = "Anonyme"
                 self.quotes.append({
                     "quote": getfeed.description.text.strip(), 
                     "author": getfeed.title.text.strip(),
