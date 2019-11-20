@@ -77,7 +77,7 @@ class GoodreadsSource(IQuoteSource):
                     author = "Anonyme"
                 self.quotes.append({
                     "quote": getfeed.description.text.strip(), 
-                    "author": getfeed.title.text.strip(),
+                    "author": author,
                     "sourceName": "VDM", 
                     "link": getfeed.link.text.strip()})
             
