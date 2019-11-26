@@ -105,7 +105,7 @@ class VDMSource(IQuoteSource):
                     .replace("[spicy]", "") \
                     .replace("|", " ") \
                     .strip()
-                author = re.sub("^Par ", '', author)
+                author = re.sub("^Par ", '', author + " ")
                 author = re.sub("^\"|\"$", '', author)
                 if author == '':
                     author = "Anonymous"
