@@ -59,7 +59,7 @@ class VDMSource(IQuoteSource):
                              "Does not support searching by tags or authors."),
             "author": "Luis Gomes",
             "url": "https://github.com/LG666/variety-vdm-quotes",
-            "version": "0.0.1"
+            "version": "0.0.2"
         }
 
     def supports_search(self):
