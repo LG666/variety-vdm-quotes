@@ -33,11 +33,13 @@ import re
 from locale import gettext as _
 from variety.Util import Util
 from variety.plugins.IQuoteSource import IQuoteSource
-import urllib.request
+try:
+    from urllib.request import Request, urlopen  # Python 3
+except ImportError:
+    from urllib2 import Request, urlopen         # Python 2
 from bs4 import BeautifulSoup
 
 logger = logging.getLogger("variety")
-
 
 class VDMSource(IQuoteSource):
     """
@@ -59,7 +61,7 @@ class VDMSource(IQuoteSource):
                              "Does not support searching by tags or authors."),
             "author": "Luis Gomes",
             "url": "https://github.com/LG666/variety-vdm-quotes",
-            "version": "0.0.2"
+            "version": "0.0.3"
         }
 
     def supports_search(self):
@@ -84,13 +86,13 @@ class VDMSource(IQuoteSource):
 
         self.quotes = []
 
-        req = urllib.request.Request(vdm_url)
+        req = Request(vdm_url)
         req.add_header('Referer', vdm_url)
         req.add_header(
             'User-Agent',
             'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36'
         )
-        parse_xml_url = urllib.request.urlopen(req)
+        parse_xml_url = urlopen(req)
 
         xml_page = parse_xml_url.read()
         parse_xml_url.close()
@@ -126,3 +128,4 @@ class VDMSource(IQuoteSource):
 
     def get_random(self):
         return self.quotes
+

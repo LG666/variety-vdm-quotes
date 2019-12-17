@@ -17,7 +17,7 @@ Needs
 
 ## Notes
 
-- This plugin was tested with Variety 0.7.2
+- This plugin was tested with Variety 0.7.2 (python 3.7) and 0.6.3 (python 2.7)
 - This plugin is in early development.
 
 ## credits
