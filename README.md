@@ -26,6 +26,7 @@ Variety is developed by Peter Levi  - https://peterlevi.com/variety/
 
 vdm.py is inspired by variety-goodreads-quotes  - https://github.com/dsbmac/variety-goodreads-quotes
 
+VDM - https://www.viedemerde.fr/ - this plugin uses the VDM RSS feed
 
 ### License
 
